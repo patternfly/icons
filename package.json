@@ -7,6 +7,8 @@
     "build": "ts-node --esm ./scripts/build.ts"
   },
   "files": [
+    "./**/*.js",
+    "./**/*.svg",
     "!scripts"
   ],
   "keywords": [
@@ -16,9 +18,9 @@
   "author": "PatternFly Contributors",
   "license": "MIT",
   "devDependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.4.0",
-    "@fortawesome/free-regular-svg-icons": "^6.4.0",
-    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^5",
+    "@fortawesome/free-regular-svg-icons": "^5",
+    "@fortawesome/free-solid-svg-icons": "^5",
     "@patternfly/patternfly": "^4.224.2",
     "ts-node": "^10.9.1"
   }
