@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "PatternFly Icons",
   "type": "module",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "ts-node --esm ./scripts/build.ts"
   },
