@@ -18,9 +18,11 @@ export interface IconSpec {
   height: number;
   /** SVG path attribute value */
   path: string | string[ ];
+  /** copyright holder and SPDX short license identifier */
+  license: string
 }
 
-type JsonIconPack = Record<string, Omit<IconSpec, 'path'> & { svgPathData: string }>;
+type JsonIconPack = Record<string, Omit<IconSpec, 'path'|'license'> & { svgPathData: string }>;
 
 const NAMES: Record<string, string> = {
   'save': 'save-alt',
@@ -43,20 +45,31 @@ function convertFontAwesomePack(icons: IconPack): Record<string, IconSpec> {
     Object.values(icons)
       .map(({ iconName, icon: [width, height, , , path] }) => [
         (iconName === '500px' ? 'five-hundred-px' : iconName),
-        { xOffset: 0, yOffset: 0, width, height, path }
+        {
+          xOffset: 0,
+          yOffset: 0,
+          width,
+          height,
+          path,
+          license: 'fontawesome. CC-BY-4.0',
+        }
       ])
   );
 }
 
 function convertJsonIconPack(icons: JsonIconPack): Record<string, IconSpec> {
   delete icons.history;
+  const license = 'Red Hat, Inc. MIT';
   return Object.fromEntries(Object.entries(icons)
     .map(([name, { width, height, svgPathData: path }]) =>
-      [(NAMES[name] as string ?? name), { width, height, path }]));
+      [(NAMES[name] as string ?? name), { width, height, path, license }]));
 }
 
 export const fab = convertFontAwesomePack(FAB);
 export const far = convertFontAwesomePack(FAR);
 export const fas = convertFontAwesomePack(FAS);
 
-export const patternfly = convertJsonIconPack({ ...pfIcons, ...customIcons });
+export const patternfly = convertJsonIconPack({
+  ...pfIcons,
+  ...customIcons,
+});
