@@ -10,6 +10,12 @@
   "scripts": {
     "build": "ts-node --esm ./scripts/build.ts"
   },
+  "exports": {
+    "./patternfly/*": "./patternfly/*",
+    "./fab/*": "./fab/*",
+    "./far/*": "./far/*",
+    "./fas/*": "./fas/*"
+  },
   "files": [
     "./**/*.js",
     "./**/*.svg",
