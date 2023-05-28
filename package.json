@@ -28,6 +28,7 @@
   "author": "PatternFly Contributors",
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@fortawesome/free-brands-svg-icons": "^5",
     "@fortawesome/free-regular-svg-icons": "^5",
     "@fortawesome/free-solid-svg-icons": "^5",
