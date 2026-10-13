@@ -26,7 +26,7 @@
     "@fortawesome/free-brands-svg-icons": "^5",
     "@fortawesome/free-regular-svg-icons": "^5",
     "@fortawesome/free-solid-svg-icons": "^5",
-    "@patternfly/patternfly": "^4.224.2",
+    "@patternfly/patternfly": "^6.6.1",
     "tsx": "^4.12.0"
   }
 }
